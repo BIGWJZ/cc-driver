@@ -292,6 +292,7 @@ int onic_init_hardware(struct onic_private *priv)
 	/* Reset cc user box*/
 	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 0);
 	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 1);
+	mdelay(CMAC_RESET_WAIT_MS);
 	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 0);
 	return 0;
 
