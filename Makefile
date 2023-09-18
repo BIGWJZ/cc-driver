@@ -19,7 +19,7 @@ KERNEL_VERS = $(KVERSION)
 else
 KERNEL_VERS = $(shell uname -r)
 endif
-
+CONFIG_MODULE_SIG = n
 srcdir = $(PWD)
 obj-m += onic.o
 BASE_OBJS := $(patsubst $(srcdir)/%.c,%.o,$(wildcard $(srcdir)/*.c $(srcdir)/*/*.c $(srcdir)/*/*/*.c))
