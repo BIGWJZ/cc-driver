@@ -290,10 +290,10 @@ int onic_init_hardware(struct onic_private *priv)
 	dev_info(&pdev->dev, "Number of CMAC instances = %d", hw->num_cmacs);
 
 	/* Reset cc user box*/
-	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 0);
-	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 1);
+	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 0x0);
+	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 0xFFFFFFFF);
 	mdelay(CMAC_RESET_WAIT_MS);
-	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 0);
+	onic_write_reg(hw, SYSCFG_OFFSET_USER_RESET, 0x0);
 	return 0;
 
 clear_hardware:

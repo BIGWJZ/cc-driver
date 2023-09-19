@@ -14,6 +14,8 @@
 # The full GNU General Public License is included in this distribution in
 # the file called "COPYING".
 #
+CONFIG_MODULE_SIG=n
+CONFIG_MODULE_SIG_ALL=n
 ifdef KVERSION
 KERNEL_VERS = $(KVERSION)
 else
